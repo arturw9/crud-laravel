@@ -24,3 +24,9 @@ Route::post('/usuarios/add', [App\Http\Controllers\UsuariosController::class, 'a
 Route::get('/usuarios/{id}/edit', [App\Http\Controllers\UsuariosController::class, 'edit'])->middleware('auth');
 Route::post('/usuarios/update/{id}', [App\Http\Controllers\UsuariosController::class, 'update'])->middleware('auth');
 Route::delete('/usuarios/delete/{id}', [App\Http\Controllers\UsuariosController::class, 'delete'])->middleware('auth');
+Route::get('/adress/novo', [App\Http\Controllers\AdressesController::class, 'create']);
+Route::post('/adress/novo', [App\Http\Controllers\AdressesController::class, 'store'])->name('salvar_adress');
+Route::get('/adresses/ver', [App\Http\Controllers\AdressesController::class, 'show']);
+Route::get('/adress/del/{id}', [App\Http\Controllers\AdressesController::class, 'destroy'])->name('excluir_adress');
+Route::get('/adress/edit/{id}', [App\Http\Controllers\AdressesController::class, 'edit'])->name('editar_adress');
+Route::post('/adress/edit/{id}', [App\Http\Controllers\AdressesController::class, 'update'])->name('atualizar_adress');
